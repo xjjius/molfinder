@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "w+hJkqrQ/XYG0X+VKCuJlUBIbvdMGiTncDjhV2d7mMzzKnL6YTWHcviyGk2we7kfHjSCcsjXRhHnbAdHZg8ukg==",
+  "success": true,
+  "projectFilePath": "D:\\Project\\molfinder\\Szhchem.Chemistry\\Szhchem.Chemistry.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\xjjius\\.nuget\\packages\\indigo.net\\1.4.0-beta.12\\indigo.net.1.4.0-beta.12.nupkg.sha512",
+    "C:\\Users\\xjjius\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

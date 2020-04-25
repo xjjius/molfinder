@@ -1,0 +1,183 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETStandard,Version=v2.1": {
+      "Indigo.Net/1.4.0-beta.12": {
+        "type": "package",
+        "dependencies": {
+          "System.Drawing.Common": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Indigo.Net.dll": {},
+          "lib/netstandard2.0/bingo.dll": {},
+          "lib/netstandard2.0/concrt140.dll": {},
+          "lib/netstandard2.0/indigo-inchi.dll": {},
+          "lib/netstandard2.0/indigo-renderer.dll": {},
+          "lib/netstandard2.0/indigo.dll": {},
+          "lib/netstandard2.0/msvcp140.dll": {},
+          "lib/netstandard2.0/vcruntime140.dll": {},
+          "lib/netstandard2.0/vcruntime140_1.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Indigo.Net.dll": {},
+          "lib/netstandard2.0/bingo.dll": {},
+          "lib/netstandard2.0/concrt140.dll": {},
+          "lib/netstandard2.0/indigo-inchi.dll": {},
+          "lib/netstandard2.0/indigo-renderer.dll": {},
+          "lib/netstandard2.0/indigo.dll": {},
+          "lib/netstandard2.0/msvcp140.dll": {},
+          "lib/netstandard2.0/vcruntime140.dll": {},
+          "lib/netstandard2.0/vcruntime140_1.dll": {}
+        }
+      },
+      "System.Drawing.Common/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Drawing.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Indigo.Net/1.4.0-beta.12": {
+      "sha512": "La/4b3b5OX9Bss3h+D0HztYyL70jWdVPNmZazDCG8NBOcyzetnjO9xi8XQrU3r6HLLKm900Grwtf++UFI1yJ4Q==",
+      "type": "package",
+      "path": "indigo.net/1.4.0-beta.12",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "indigo.net.1.4.0-beta.12.nupkg.sha512",
+        "indigo.net.nuspec",
+        "lib/netstandard2.0/Indigo.Net.dll",
+        "lib/netstandard2.0/bingo.dll",
+        "lib/netstandard2.0/concrt140.dll",
+        "lib/netstandard2.0/indigo-inchi.dll",
+        "lib/netstandard2.0/indigo-renderer.dll",
+        "lib/netstandard2.0/indigo.dll",
+        "lib/netstandard2.0/libbingo.dylib",
+        "lib/netstandard2.0/libbingo.so",
+        "lib/netstandard2.0/libindigo-inchi.dylib",
+        "lib/netstandard2.0/libindigo-inchi.so",
+        "lib/netstandard2.0/libindigo-renderer.dylib",
+        "lib/netstandard2.0/libindigo-renderer.so",
+        "lib/netstandard2.0/libindigo.dylib",
+        "lib/netstandard2.0/libindigo.so",
+        "lib/netstandard2.0/msvcp140.dll",
+        "lib/netstandard2.0/vcruntime140.dll",
+        "lib/netstandard2.0/vcruntime140_1.dll"
+      ]
+    },
+    "System.Drawing.Common/4.7.0": {
+      "sha512": "v+XbyYHaZjDfn0ENmJEV1VYLgGgCTx1gnfOBcppowbpOAriglYgGCvFCPr2EEZyBvXlpxbEsTwkOlInl107ahA==",
+      "type": "package",
+      "path": "system.drawing.common/4.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net461/System.Drawing.Common.dll",
+        "lib/netstandard2.0/System.Drawing.Common.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net461/System.Drawing.Common.dll",
+        "ref/netcoreapp3.0/System.Drawing.Common.dll",
+        "ref/netcoreapp3.0/System.Drawing.Common.xml",
+        "ref/netstandard2.0/System.Drawing.Common.dll",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/unix/lib/netcoreapp2.0/System.Drawing.Common.dll",
+        "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll",
+        "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.xml",
+        "runtimes/win/lib/netcoreapp2.0/System.Drawing.Common.dll",
+        "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll",
+        "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.xml",
+        "system.drawing.common.4.7.0.nupkg.sha512",
+        "system.drawing.common.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETStandard,Version=v2.1": [
+      "Indigo.Net >= 1.4.0-beta.12"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\xjjius\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "D:\\Project\\molfinder\\Szhchem.Chemistry\\Szhchem.Chemistry.csproj",
+      "projectName": "Szhchem.Chemistry",
+      "projectPath": "D:\\Project\\molfinder\\Szhchem.Chemistry\\Szhchem.Chemistry.csproj",
+      "packagesPath": "C:\\Users\\xjjius\\.nuget\\packages\\",
+      "outputPath": "D:\\Project\\molfinder\\Szhchem.Chemistry\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\xjjius\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "netstandard2.1"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netstandard2.1": {
+        "dependencies": {
+          "Indigo.Net": {
+            "target": "Package",
+            "version": "[1.4.0-beta.12, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "NETStandard.Library": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

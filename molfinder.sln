@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "molfinder", "molfinder\molfinder.csproj", "{91AF8F0A-685D-46DD-8F6B-52B898B120BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Szhchem.Chemistry", "Szhchem.Chemistry\Szhchem.Chemistry.csproj", "{10DA5E9F-4DAD-40EB-904E-A0972103C206}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Szhchem.Data", "Szhchem.Data\Szhchem.Data.csproj", "{3C049459-F5AC-467C-A71A-855A4D57E44A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{91AF8F0A-685D-46DD-8F6B-52B898B120BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91AF8F0A-685D-46DD-8F6B-52B898B120BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91AF8F0A-685D-46DD-8F6B-52B898B120BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91AF8F0A-685D-46DD-8F6B-52B898B120BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10DA5E9F-4DAD-40EB-904E-A0972103C206}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10DA5E9F-4DAD-40EB-904E-A0972103C206}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10DA5E9F-4DAD-40EB-904E-A0972103C206}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10DA5E9F-4DAD-40EB-904E-A0972103C206}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C049459-F5AC-467C-A71A-855A4D57E44A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C049459-F5AC-467C-A71A-855A4D57E44A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C049459-F5AC-467C-A71A-855A4D57E44A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C049459-F5AC-467C-A71A-855A4D57E44A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
