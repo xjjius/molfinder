@@ -1,0 +1,15 @@
+{
+  "Home": "主页",
+  "Counter": "计数器",
+  "Fetch data": "抓取数据",
+  "formula": "分子式",
+  "mass": "分子量",
+  "charge": "电荷",
+  "exactMass": "精确质量",
+  "inChI": "InChI",
+  "inChIKey": "InChIKey",
+  "General Information": "基本信息",
+  "Calculated Properties": "计算属性",
+  "Names and Identifiers": "名称和标识",
+  "Registration numbers": "数据登录号"
+}

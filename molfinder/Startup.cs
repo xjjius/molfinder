@@ -11,6 +11,7 @@ using molfinder.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
 using molfinder.Services;
 using Szhchem.Data;
 
@@ -48,6 +49,12 @@ namespace molfinder
             services.AddSpaStaticFiles(configuration => { configuration.RootPath = "ClientApp/build"; });
 
             services.Configure<DataOption>(Configuration.GetSection("DataOption"));
+            /*services.AddScoped(factory =>
+                new MongoDbContext(
+                    factory.GetRequiredService<IOptions<DataOption>>().Value.ConnectionString,
+                    factory.GetRequiredService<IOptions<DataOption>>().Value.DatabaseName
+                )
+            );*/
             services.AddScoped<IDataService, DataService>();
             services.AddScoped<MolecularRenderer>();
             services.AddSingleton<GlobalConfig>();

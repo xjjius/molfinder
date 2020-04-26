@@ -16,12 +16,19 @@ namespace molfinder.Services
     {
         private readonly MongoDbContext _mongo;
 
+        // 不使用 NET Core 的 DI
         public DataService(IOptions<DataOption> options)
         {
-            string connectionString = options.Value.ConnectionString;
-            string databaseName = options.Value.DatabaseName;
+            var connectionString = options.Value.ConnectionString;
+            var databaseName = options.Value.DatabaseName;
             _mongo = new MongoDbContext(connectionString, databaseName);
         }
+
+        // 使用 NET Core 的 DI
+        /*public DataService(MongoDbContext mongo)
+        {
+            _mongo = mongo;
+        }*/
 
         public Company GetCompanyByCompanyId(int companyId)
         {
@@ -48,16 +55,16 @@ namespace molfinder.Services
                 .Add("CompanyInformation", "$Company.CompanyInformation")
                 .Add("DataSources", "$Company.DataSources");
             var addFields = new BsonDocument("$addFields", fieldsToBeAdded);
-            /*var fields = new BsonDocument()
+            var fields = new BsonDocument()
                 .Add("Company", 0)
                 .Add("NameIDs", 0)
                 .Add("RegNoIDs", 0)
                 .Add("SubstanceDetails", 0)
                 .Add("ReferenceIDs", 0)
                 .Add("Prices", 0);
-            var project = new BsonDocument("$project", fields);*/
+            var project = new BsonDocument("$project", fields);
 
-            var pipeline = new[] {match, lookup, unwind, addFields};
+            var pipeline = new[] {match, lookup, unwind, addFields, project};
             var rawData = _mongo.GetAggregationResult<Substance, MoleculeDataSource>(pipeline);
             var result = new List<MoleculeDataSource>();
             foreach (var data in rawData)
@@ -109,33 +116,25 @@ namespace molfinder.Services
 
         public IEnumerable<PropertyGroup> GetMoleculeProperty(long molID)
         {
-            var result = new List<PropertyGroup>();
             var list = _mongo.GetManyByMolID<Property>(molID);
             var groupByCategory = list.GroupBy(l => l.PropertyCategory);
-            foreach (var categoryGroup in groupByCategory)
-            {
-                var p = new PropertyGroup();
-                p.PropertyCategory = categoryGroup.Key;
 
-                var groupByType = categoryGroup.GroupBy(g => g.PropertyCode);
-                foreach (var typeGroup in groupByType)
+            return groupByCategory.Select(categoryGroup => new PropertyGroup
                 {
-                    p.Properties.Add(new PropertyTypeGroup
-                    {
-                        PropertyCode = typeGroup.Key,
-                        Properties = typeGroup.ToList()
-                    });
+                    PropertyCategory = categoryGroup.Key,
+                    Properties = new List<PropertyTypeGroup>(categoryGroup.GroupBy(g => g.PropertyCode)
+                        .Select(c => new PropertyTypeGroup()
+                        {
+                            PropertyCode = c.Key,
+                            Properties = c.ToList()
+                        })
+                    )
                 }
-
-                result.Add(p);
-            }
-
-            return result;
+            ).ToList();
         }
 
         public IEnumerable<MolNameGroup> GetMolNamesByMolID(long molID)
         {
-            var result = new List<MolNameGroup>();
             // Title 也算同义词的一种，合并之
             var names = _mongo.GetManyByMolID<MolName>(molID)
                 .Select(n =>
@@ -145,6 +144,7 @@ namespace molfinder.Services
                     return n;
                 }).Distinct(new MolNameComparer());
 
+            // 使用自定义的Peek Linq扩展方法
             /*var names = _mongo.GetManyByMolID<MolName>(molID)
                 .Peek(n =>
                 {
@@ -152,32 +152,27 @@ namespace molfinder.Services
                         n.NameType = 13;
                 }).Distinct(new MolNameComparer());*/
 
-            names.GroupBy(n => n.NameType).ToList()
-                .ForEach(n =>
-                {
-                    result.Add(new MolNameGroup()
+            return names.GroupBy(n => n.NameType)
+                .Select(n =>
+                    new MolNameGroup()
                     {
                         NameType = n.Key,
                         MolNames = n.ToList()
-                    });
-                });
-            return result;
+                    }
+                );
         }
 
         public IEnumerable<MolRegNoGroup> GetMolRegNoByMolID(long molID)
         {
-            var result = new List<MolRegNoGroup>();
             var regNos = _mongo.GetManyByMolID<MolRegNo>(molID);
-            regNos.GroupBy(r => r.RegType).ToList()
-                .ForEach(r =>
-                {
-                    result.Add(new MolRegNoGroup()
+            return regNos.GroupBy(r => r.RegType)
+                .Select(r =>
+                    new MolRegNoGroup()
                     {
                         RegType = r.Key,
                         MolRegNos = r.ToList()
-                    });
-                });
-            return result;
+                    }
+                );
         }
     }
 }

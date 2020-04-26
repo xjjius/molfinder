@@ -37,7 +37,7 @@ namespace Szhchem.Data
             var config = new ConfigInfo
             {
                 CalcPrograms = CalcProgramInfo.CalcPrograms,
-                Properties = PropertyInfo.PreProperty,
+                PreProperties = PropertyInfo.PreProperty,
                 PropCategories = PropCategoryInfo.PropCategory,
                 SynNameTypes = SynNameTypeInfo.SynNameTypes,
                 RegTypes = RegTypeInfo.RegTypes,

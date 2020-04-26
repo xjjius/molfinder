@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using molfinder.Models;
 using molfinder.Services;
+using Szhchem.Chemistry;
 using Szhchem.Data;
 
 namespace molfinder.Controllers
@@ -26,9 +27,9 @@ namespace molfinder.Controllers
         
         [Route("molimg")]
         [HttpPost]
-        public string GetMoleculeImg(string molFile)
+        public string GetMoleculeImg(MoleculeBase molBase)
         {
-            return _renderer.RenderToDataUrl(molFile);
+            return _renderer.RenderToDataUrl(molBase.MolFile);
         }
 
         [Route("molecule")]
@@ -74,7 +75,7 @@ namespace molfinder.Controllers
             return _data.GetMolNamesByMolID(molID);
         }
 
-        [Route("molregno")]
+        [Route("molregnos")]
         public IEnumerable<MolRegNoGroup> GetMolRegNoGroupFromMolID(long molID)
         {
             return _data.GetMolRegNoByMolID(molID);
