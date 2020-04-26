@@ -1,0 +1,11 @@
+D:\Project\molfinder\Szhchem.Chemistry\bin\Release\netstandard2.1\Szhchem.Chemistry.deps.json
+D:\Project\molfinder\Szhchem.Chemistry\bin\Release\netstandard2.1\Szhchem.Chemistry.dll
+D:\Project\molfinder\Szhchem.Chemistry\bin\Release\netstandard2.1\Szhchem.Chemistry.pdb
+D:\Project\molfinder\Szhchem.Chemistry\bin\Release\netstandard2.1\OBDotNet.dll
+D:\Project\molfinder\Szhchem.Chemistry\obj\Release\netstandard2.1\Szhchem.Chemistry.csprojAssemblyReference.cache
+D:\Project\molfinder\Szhchem.Chemistry\obj\Release\netstandard2.1\Szhchem.Chemistry.csproj.CoreCompileInputs.cache
+D:\Project\molfinder\Szhchem.Chemistry\obj\Release\netstandard2.1\Szhchem.Chemistry.AssemblyInfoInputs.cache
+D:\Project\molfinder\Szhchem.Chemistry\obj\Release\netstandard2.1\Szhchem.Chemistry.AssemblyInfo.cs
+D:\Project\molfinder\Szhchem.Chemistry\obj\Release\netstandard2.1\Szhchem.Chemistry.csproj.CopyComplete
+D:\Project\molfinder\Szhchem.Chemistry\obj\Release\netstandard2.1\Szhchem.Chemistry.dll
+D:\Project\molfinder\Szhchem.Chemistry\obj\Release\netstandard2.1\Szhchem.Chemistry.pdb

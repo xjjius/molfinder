@@ -24,6 +24,6 @@ namespace molfinder.Models
         public DateTime TimeCreated { get; set; }
         public List<CompanyInfo> CompanyInformation { get; set; } = new List<CompanyInfo>();
         public List<DataSource> DataSources { get; set; } = new List<DataSource>();
-        [BsonIgnore] public int DataSourceType;
+        public int DataSourceType { get; set; }
     }
 }

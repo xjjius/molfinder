@@ -82,12 +82,12 @@ namespace molfinder.Services
                     UserRating = data.UserRating,
                     TimeCreated = data.TimeCreated,
                     CompanyInformation = data.CompanyInformation,
-                    DataSources = data.DataSources.FindAll(d => d.DataSourceIntId == data.DataSourceIntId)
+                    Viewed = data.Viewed,
+                    DataSources = data.DataSources.FindAll(d => d.DataSourceIntId == data.DataSourceIntId),
                 };
                 item.DataSourceType = item.DataSources[0].DataSourceType;
                 result.Add(item);
             }
-
             return result;
         }
 
