@@ -1,8 +1,10 @@
 ﻿using System;
+using MongoDB.Bson.Serialization.Attributes;
 using Szhchem.Data;
 
 namespace molfinder.Models
 {
+    [BsonIgnoreExtraElements]
     public class SubstanceSupplier
     {
         public Company Company { get; set; } = new Company();

@@ -48,16 +48,16 @@ namespace molfinder.Services
                 .Add("CompanyInformation", "$Company.CompanyInformation")
                 .Add("DataSources", "$Company.DataSources");
             var addFields = new BsonDocument("$addFields", fieldsToBeAdded);
-            var fields = new BsonDocument()
+            /*var fields = new BsonDocument()
                 .Add("Company", 0)
                 .Add("NameIDs", 0)
                 .Add("RegNoIDs", 0)
                 .Add("SubstanceDetails", 0)
                 .Add("ReferenceIDs", 0)
                 .Add("Prices", 0);
-            var project = new BsonDocument("$project", fields);
+            var project = new BsonDocument("$project", fields);*/
 
-            var pipeline = new[] {match, lookup, unwind, addFields, project};
+            var pipeline = new[] {match, lookup, unwind, addFields};
             var rawData = _mongo.GetAggregationResult<Substance, MoleculeDataSource>(pipeline);
             var result = new List<MoleculeDataSource>();
             foreach (var data in rawData)
@@ -137,20 +137,20 @@ namespace molfinder.Services
         {
             var result = new List<MolNameGroup>();
             // Title 也算同义词的一种，合并之
-            /*var names = _mongo.GetManyByMolID<MolName>(molID)
+            var names = _mongo.GetManyByMolID<MolName>(molID)
                 .Select(n =>
                 {
                     if (n.NameType == 1)
                         n.NameType = 13;
                     return n;
-                }).Distinct(new MolNameComparer());*/
+                }).Distinct(new MolNameComparer());
 
-            var names = _mongo.GetManyByMolID<MolName>(molID)
+            /*var names = _mongo.GetManyByMolID<MolName>(molID)
                 .Peek(n =>
                 {
                     if (n.NameType == 1)
                         n.NameType = 13;
-                }).Distinct(new MolNameComparer());
+                }).Distinct(new MolNameComparer());*/
 
             names.GroupBy(n => n.NameType).ToList()
                 .ForEach(n =>
