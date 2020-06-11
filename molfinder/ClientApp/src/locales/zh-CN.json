@@ -11,5 +11,15 @@
   "General Information": "基本信息",
   "Calculated Properties": "计算属性",
   "Names and Identifiers": "名称和标识",
-  "Registration numbers": "数据登录号"
+  "Registration numbers": "数据登录号",
+  "Explosive": "爆炸性",
+  "Oxidising": "氧化性",
+  "Flammable": "易燃性",
+  "Highly flammable": "高度易燃性",
+  "Toxic": "有毒",
+  "Highly toxic": "剧毒",
+  "Harmful": "有害性",
+  "Irritant": "刺激性",
+  "Corrosive": "腐蚀性",
+  "Nature polluting": "环境危害性"
 }

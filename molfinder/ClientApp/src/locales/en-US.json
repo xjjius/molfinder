@@ -11,5 +11,15 @@
   "General Information": "General Information",
   "Calculated Properties": "Calculated Properties",
   "Names and Identifiers": "Names and Identifiers",
-  "Registration numbers": "Registration numbers"
+  "Registration numbers": "Registration numbers",
+  "Explosive": "Explosive",
+  "Oxidising": "Oxidising",
+  "Flammable": "Flammable",
+  "Highly flammable": "Highly flammable",
+  "Toxic": "Toxic",
+  "Highly toxic": "Highly toxic",
+  "Harmful": "Harmful",
+  "Irritant": "Irritant",
+  "Corrosive": "Corrosive",
+  "Nature polluting": "Nature polluting"
 }

@@ -8,7 +8,17 @@ import Property from "../models/Property";
 import Config from "./Config";
 import SynNameType from "./SynNameType";
 import RegType from "./RegType";
-import nfpa_imgage from "./NFPA_704.svg"
+import nfpa_imgage from "./NFPA_704.svg";
+import Hazard_E from "./EUHazSymbols/Hazard_E.png";
+import Hazard_O from "./EUHazSymbols/Hazard_O.png";
+import Hazard_F from "./EUHazSymbols/Hazard_F.png";
+import Hazard_FF from "./EUHazSymbols/Hazard_FF.png";
+import Hazard_T from "./EUHazSymbols/Hazard_T.png";
+import Hazard_TT from "./EUHazSymbols/Hazard_TT.png";
+import Hazard_X from "./EUHazSymbols/Hazard_X.png";
+import Hazard_Xi from "./EUHazSymbols/Hazard_Xi.png";
+import Hazard_C from "./EUHazSymbols/Hazard_C.png";
+import Hazard_N from "./EUHazSymbols/Hazard_N.png";
 
 
 class Labels {
@@ -109,6 +119,8 @@ class Labels {
             return `<a href="${propertyValue}" target="_blank">Download link</a>`;
         } else if (propertyCode === 141) {
             return this.GetNFPASign(propertyValue);
+        } else if (propertyCode === 48) {
+            return this.GetHazSymbolText(propertyValue);
         } else {
             return propertyValue;
         }
@@ -181,6 +193,59 @@ class Labels {
         `;
 
         return result;
+    }
+
+    private GetHazSymbolText(hazCode: string): string {
+        let hazSymbol;
+        let hazText: string = "";
+        switch (hazCode) {
+            case "E":
+                hazSymbol = Hazard_E;
+                hazText = intl.get("Explosive");
+                break;
+            case "O":
+                hazSymbol = Hazard_O;
+                hazText = intl.get("Oxidising");
+                break;
+            case "F":
+                hazSymbol = Hazard_F;
+                hazText = intl.get("Flammable");
+                break;
+            case "F+":
+                hazSymbol = Hazard_FF;
+                hazText = intl.get("Highly flammable");
+                break;
+            case "T":
+                hazSymbol = Hazard_T;
+                hazText = intl.get("Toxic");
+                break;
+            case "T+":
+                hazSymbol = Hazard_TT;
+                hazText = intl.get("Highly toxic");
+                break;
+            case "Xn":
+                hazSymbol = Hazard_X;
+                hazText = intl.get("Harmful");
+                break;
+            case "Xi":
+                hazSymbol = Hazard_Xi;
+                hazText = intl.get("Irritant");
+                break;
+            case "C":
+                hazSymbol = Hazard_C;
+                hazText = intl.get("Corrosive");
+                break;
+            case "N":
+                hazSymbol = Hazard_N;
+                hazText = intl.get("Nature polluting");
+                break;
+        }
+
+        if (hazSymbol !== "" || hazSymbol !== null) {
+            return `<img src="${hazSymbol}" alt="${hazText}" style="width: 50px; height: 50px; margin-top: 5px; margin-bottom: 0;"/> ${hazText} (${hazCode})`;
+        } else {
+            return hazCode;
+        }
     }
 }
 
