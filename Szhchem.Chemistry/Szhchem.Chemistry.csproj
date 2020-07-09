@@ -5,13 +5,13 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Reference Include="OBDotNet, Version=0.5.0.0, Culture=neutral, PublicKeyToken=3069c9c4f488e4bd">
-        <HintPath>C:\Program Files\OpenBabel-3.0.0\OBDotNet.dll</HintPath>
-      </Reference>
+      <PackageReference Include="Indigo.Net" Version="1.4.0-beta.12" />
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Indigo.Net" Version="1.4.0-beta.12" />
+      <Reference Include="OBDotNet, Version=0.5.0.0, Culture=neutral, PublicKeyToken=3069c9c4f488e4bd">
+        <HintPath>C:\Program Files\OpenBabel-3.1.1\OBDotNet.dll</HintPath>
+      </Reference>
     </ItemGroup>
 
 </Project>

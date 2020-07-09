@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Szhchem.Chemistry", "Szhche
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Szhchem.Data", "Szhchem.Data\Szhchem.Data.csproj", "{3C049459-F5AC-467C-A71A-855A4D57E44A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Szhchem.Test", "Szhchem.Test\Szhchem.Test.csproj", "{69AAB397-FD98-4735-A8F8-A3C275DA3CB4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{3C049459-F5AC-467C-A71A-855A4D57E44A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C049459-F5AC-467C-A71A-855A4D57E44A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C049459-F5AC-467C-A71A-855A4D57E44A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69AAB397-FD98-4735-A8F8-A3C275DA3CB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69AAB397-FD98-4735-A8F8-A3C275DA3CB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69AAB397-FD98-4735-A8F8-A3C275DA3CB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69AAB397-FD98-4735-A8F8-A3C275DA3CB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 EndGlobal

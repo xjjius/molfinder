@@ -283,7 +283,6 @@ namespace Szhchem.Data
             var col = Collection<T>();
             return col.Find<T>(new BsonDocument("MolID", molID)).ToList();
         }
-        
 
         #endregion
 

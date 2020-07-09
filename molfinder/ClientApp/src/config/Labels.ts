@@ -19,6 +19,15 @@ import Hazard_X from "./EUHazSymbols/Hazard_X.png";
 import Hazard_Xi from "./EUHazSymbols/Hazard_Xi.png";
 import Hazard_C from "./EUHazSymbols/Hazard_C.png";
 import Hazard_N from "./EUHazSymbols/Hazard_N.png";
+import GHS_corrosion from "./GHSPictograms/GHS_corrosion.svg";
+import GHS_environment from "./GHSPictograms/GHS_environment.svg";
+import GHS_exclamation_mark from "./GHSPictograms/GHS_exclamation_mark.svg";
+import GHS_exploding_bomb from "./GHSPictograms/GHS_exploding_bomb.svg";
+import GHS_flame from "./GHSPictograms/GHS_flame.svg";
+import GHS_flame_over_circle from "./GHSPictograms/GHS_flame_over_circle.svg";
+import GHS_gas_cylinder from "./GHSPictograms/GHS_gas_cylinder.svg";
+import GHS_health_hazard from "./GHSPictograms/GHS_health_hazard.svg";
+import GHS_skull_and_crossbones from "./GHSPictograms/GHS_skull_and_crossbones.svg";
 
 
 class Labels {
@@ -121,6 +130,8 @@ class Labels {
             return this.GetNFPASign(propertyValue);
         } else if (propertyCode === 48) {
             return this.GetHazSymbolText(propertyValue);
+        } else if (propertyCode === 134) {
+            return this.GetGHSPictogram(propertyValue);
         } else {
             return propertyValue;
         }
@@ -172,7 +183,7 @@ class Labels {
             }
         });
 
-        let result = `
+        return `
             <div style="position: relative; height: 85px; width: 75px; margin-top: 5px; margin-bottom: -5px;">
                 <div style="position: absolute; height: 75px; width: 75px;">
                     <img src="${nfpa_imgage}" width="75px" height="75px" alt="NFPA 704 diagram"/>
@@ -191,12 +202,10 @@ class Labels {
                 </div>
             </div>
         `;
-
-        return result;
     }
 
     private GetHazSymbolText(hazCode: string): string {
-        let hazSymbol;
+        let hazSymbol: string = "";
         let hazText: string = "";
         switch (hazCode) {
             case "E":
@@ -241,10 +250,62 @@ class Labels {
                 break;
         }
 
-        if (hazSymbol !== "" || hazSymbol !== null) {
+        if (hazSymbol !== "") {
             return `<img src="${hazSymbol}" alt="${hazText}" style="width: 50px; height: 50px; margin-top: 5px; margin-bottom: 0;"/> ${hazText} (${hazCode})`;
         } else {
             return hazCode;
+        }
+    }
+
+    private GetGHSPictogram(ghs: string): string {
+        let picCode = "";
+        let ghsCode = "";
+
+        let temp: string[] = ghs.split('#');
+
+        if (temp.length > 1) {
+            ghsCode = temp[0];
+        } else {
+            ghsCode = ghs;
+        }
+
+        switch (ghsCode) {
+            case "GHS01":
+                picCode = GHS_exploding_bomb;
+                break;
+            case "GHS02":
+                picCode = GHS_flame;
+                break;
+            case "GHS03":
+                picCode = GHS_flame_over_circle;
+                break;
+            case "GHS04":
+                picCode = GHS_gas_cylinder;
+                break;
+            case "GHS05":
+                picCode = GHS_corrosion;
+                break;
+            case "GHS06":
+                picCode = GHS_skull_and_crossbones;
+                break;
+            case "GHS07":
+                picCode = GHS_exclamation_mark;
+                break;
+            case "GHS08":
+                picCode = GHS_health_hazard;
+                break;
+            case "GHS09":
+                picCode = GHS_environment;
+                break;
+            default:
+                picCode = ghsCode;
+                break;
+        }
+
+        if (temp.length === 1) {
+            return `<img src="${picCode}" alt="${ghsCode}" style="width: 70px; height: 70px; margin-top: 2px; margin-bottom: 2px;"/>`;
+        } else {
+            return `<img src="${picCode}" title="${temp[1]}" alt="${ghsCode}" style="width: 70px; height: 70px; margin-top: 2px; margin-bottom: 2px;"/> : ${temp[1]}`;
         }
     }
 }
